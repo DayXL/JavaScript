@@ -1,2 +1,2 @@
-# JavaScript
+# HTML/JavaScript
 Tentando aprender JavaScript
