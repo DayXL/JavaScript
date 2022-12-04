@@ -1,3 +1,11 @@
 p {
     color: rgb(40, 226, 201);
+    
+}
+
+ul {
+    color: rgb(40, 226, 111);
+    width: 200px;
+    border: 2px solid black;
+
 }
