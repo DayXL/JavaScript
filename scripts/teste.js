@@ -1,17 +1,16 @@
-const myHeading = document.querySelector("h1");
 
-myHeading.textContent = "Tá aqui!";
+let myImage = document.querySelector('img');
 
-alert("Seja bem vindo!");
+myImage.onclick = function() {
 
-document.querySelector("h1").addEventListener("click", function () {
+    let mySrc = myImage.getAttribute('src');
 
-    alert("Você clicou no título principal");
-    
-});
+    if (mySrc === 'Imagens/gato.png') {
+        myImage.setAttribute ('src','Imagens/gato2.png');
+    } 
 
-document.querySelector("h2").addEventListener("click", function () {
+    else {
+        myImage.setAttribute ('src','Imagens/gato.png');
+    }
 
-    alert("Você clicou no subtítulo ");
-    
-});
+}
