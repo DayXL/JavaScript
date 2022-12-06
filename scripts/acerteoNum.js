@@ -1,22 +1,27 @@
+let numEsc = [];
+
 function gerarNumero() {
 
     return Math.floor(Math.random() * (100 - 0 + 1)) + 0;
 
 }
 
-let myButton = document.querySelector('button');
+let botao1 = document.getElementById("botao1");
 let myHeading = document.querySelector('h2');
 let mensagem = document.querySelector('p');
+let botao2 = document.getElementById("botao2");
 
-myButton.onclick = function() {
+botao1.onclick = function() {
     let num = gerarNumero();
     myHeading.innerHTML = 'Números sorteados:' + num;
 }
 
-function numeroEscolhido() {
-    let numEscolhido = document.querySelector('input');
+botao2.onclick = function() {
+    let input = document.querySelector("#number");
+    let texto = input.value;
+    console.log(texto);
 
-    if (numEscolhido === num) {
+    if (texto === num) {
         mensagem.innerHTML ('Parabéns você acertou!');
     } 
 
