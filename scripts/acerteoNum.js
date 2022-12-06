@@ -17,20 +17,20 @@ botao1.onclick = function() {
 }
 
 botao2.onclick = function() {
-    let input = document.querySelector("#number");
+    let input = document.getElementById("numEscolhido");
     let texto = input.value;
     console.log(texto);
-
+    
     if (texto === num) {
-        mensagem.innerHTML ('Parabéns você acertou!');
+        mensagem.innerHTML = ('Parabéns você acertou!');
     } 
 
     else if (numEscolhido > num) {
-        mensagem.innerHTML ('O número sorteado é menor!');
+        mensagem.innerHTML = ('O número sorteado é menor!');
     } 
 
     else {
-        mensagem.innerHTML ('O número sorteado é maior!');
+        mensagem.innerHTML = ('O número sorteado é maior!');
     }
 
 }
