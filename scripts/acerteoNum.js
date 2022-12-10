@@ -44,6 +44,7 @@ botao2.onclick = function() {
             myHeading.innerHTML = 'Números escolhidos:';
             alert('Parabéns você acertou!');
             alert('Se quiser jogar novamente faça o sorteio de um novo número!');
+            mensagem.innerHTML = ('');
 
         } 
 
@@ -64,6 +65,7 @@ botao2.onclick = function() {
         myHeading.innerHTML = 'Números escolhidos:';
         alert('Suas chances acabaram!');
         alert('Se quiser jogar novamente faça o sorteio de um novo número!');
+        mensagem.innerHTML = ('');
 
     }
 
