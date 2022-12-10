@@ -13,8 +13,16 @@ var mensagem = document.querySelector('p');
 var botao2 = document.getElementById("botao2");
 
 botao1.onclick = function() {
-    let num = gerarNumero();
-    numSorteado = num;
+    if (numEsc.length == 0) {
+        let num = gerarNumero();
+        numSorteado = num;
+    
+    }
+
+    else {
+        alert('Você só pode sortear novamente após ganhar ou perder!')
+
+    }
 
 }
 
@@ -30,6 +38,7 @@ botao2.onclick = function() {
         if (numParCom == numSorteado) {
             mensagem.innerHTML = ('Parabéns você acertou!');
             numEsc.length = 0;
+            myHeading.innerHTML = 'Números escolhidos:';
 
         } 
 
@@ -47,6 +56,7 @@ botao2.onclick = function() {
     else {
         mensagem.innerHTML = ('Suas chances acabaram!');
         numEsc.length = 0;
+        myHeading.innerHTML = 'Números escolhidos:';
 
     }
 
