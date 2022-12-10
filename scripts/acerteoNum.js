@@ -19,6 +19,12 @@ botao1.onclick = function() {
         let num = gerarNumero();
         numSorteado = num;
 
+        while(numSorteado == undefined) {
+            num = gerarNumero();
+            numSorteado = num;
+            
+        }
+
         corpoTres.innerHTML = 'Chances restantes: 10';
         corpoDois.innerHTML = 'Número sorteado: ???';
     
