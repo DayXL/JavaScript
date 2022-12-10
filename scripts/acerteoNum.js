@@ -10,6 +10,7 @@ function gerarNumero() {
 var botao1 = document.getElementById("botao1");
 var myHeading = document.querySelector('h2');
 var corpoDois = document.querySelector('h3');
+var corpoTres = document.querySelector('h4');
 var mensagem = document.querySelector('p');
 var botao2 = document.getElementById("botao2");
 
@@ -35,6 +36,8 @@ botao2.onclick = function() {
     numEsc.push(numParCom);
 
     myHeading.innerHTML = 'Números escolhidos:' + numEsc;
+
+    corpoDois.innerHTML = 'Chances restantes: ' + (10 - numEsc.length);
 
     if (numEsc.length <= 10) {
 
