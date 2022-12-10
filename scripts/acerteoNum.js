@@ -16,26 +16,35 @@ botao1.onclick = function() {
     let num = gerarNumero();
     numSorteado = num;
 
-    myHeading.innerHTML = 'Números sorteados:' + num;
-
 }
 
 botao2.onclick = function() {
     let numParCom = document.getElementById("numEscolhido").value
     
+    numEsc.push(numParCom);
 
-    if (numParCom == numSorteado) {
-        mensagem.innerHTML = ('Parabéns você acertou!');
-    } 
+    myHeading.innerHTML = 'Números escolhidos:' + numEsc;
 
-    else if (numParCom > numSorteado) {
-        mensagem.innerHTML = ('O número sorteado é menor!');
-    } 
+    if (numEsc.length <= 9) {
+
+        if (numParCom == numSorteado) {
+            mensagem.innerHTML = ('Parabéns você acertou!');
+        } 
+
+        else if (numParCom > numSorteado) {
+            mensagem.innerHTML = ('O número sorteado é menor!');
+        } 
+
+        else {
+
+            mensagem.innerHTML = ('O número sorteado é maior!');
+        }
+    
+    }
 
     else {
-        mensagem.innerHTML = ('O número sorteado é maior! ' + numParCom);
+        mensagem.innerHTML = ('Suas chances acabaram!');
 
-        //mensagem.innerHTML = ('O número sorteado é maior!');
     }
 
 }
