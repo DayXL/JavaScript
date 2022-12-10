@@ -36,12 +36,14 @@ botao2.onclick = function() {
 
     myHeading.innerHTML = 'Números escolhidos:' + numEsc;
 
-    if (numEsc.length <= 9) {
+    if (numEsc.length <= 10) {
 
         if (numParCom == numSorteado) {
-            mensagem.innerHTML = ('Parabéns você acertou!');
+            corpoDois.innerHTML = 'Número sorteado: ' + numSorteado;
             numEsc.length = 0;
             myHeading.innerHTML = 'Números escolhidos:';
+            alert('Parabéns você acertou!');
+            alert('Se quiser jogar novamente faça o sorteio de um novo número!');
 
         } 
 
@@ -57,9 +59,11 @@ botao2.onclick = function() {
     }
 
     else {
-        mensagem.innerHTML = ('Suas chances acabaram!');
+        corpoDois.innerHTML = 'Número sorteado: ' + numSorteado;
         numEsc.length = 0;
         myHeading.innerHTML = 'Números escolhidos:';
+        alert('Suas chances acabaram!');
+        alert('Se quiser jogar novamente faça o sorteio de um novo número!');
 
     }
 
