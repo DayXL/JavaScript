@@ -1,4 +1,5 @@
-let numEsc = [];
+var numEsc = [];
+var numSorteado;
 
 function gerarNumero() {
 
@@ -6,26 +7,27 @@ function gerarNumero() {
 
 }
 
-let botao1 = document.getElementById("botao1");
-let myHeading = document.querySelector('h2');
-let mensagem = document.querySelector('p');
-let botao2 = document.getElementById("botao2");
+var botao1 = document.getElementById("botao1");
+var myHeading = document.querySelector('h2');
+var mensagem = document.querySelector('p');
+var botao2 = document.getElementById("botao2");
 
 botao1.onclick = function() {
     let num = gerarNumero();
+    numSorteado = num;
+
     myHeading.innerHTML = 'Números sorteados:' + num;
+
 }
 
 botao2.onclick = function() {
-    let input = document.getElementById("numEscolhido");
-    let texto = input.value;
-    console.log(texto);
+    let numParCom = document.getElementById("numEscolhido").innerHTML
     
-    if (texto === num) {
+    if (numParCom === numSorteado) {
         mensagem.innerHTML = ('Parabéns você acertou!');
     } 
 
-    else if (numEscolhido > num) {
+    else if (numParCom > numSorteado) {
         mensagem.innerHTML = ('O número sorteado é menor!');
     } 
 
