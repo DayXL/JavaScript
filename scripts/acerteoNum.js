@@ -29,6 +29,8 @@ botao2.onclick = function() {
 
         if (numParCom == numSorteado) {
             mensagem.innerHTML = ('Parabéns você acertou!');
+            numEsc.length = 0;
+
         } 
 
         else if (numParCom > numSorteado) {
@@ -44,6 +46,7 @@ botao2.onclick = function() {
 
     else {
         mensagem.innerHTML = ('Suas chances acabaram!');
+        numEsc.length = 0;
 
     }
 
