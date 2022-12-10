@@ -19,6 +19,7 @@ botao1.onclick = function() {
         let num = gerarNumero();
         numSorteado = num;
 
+        corpoTres.innerHTML = 'Chances restantes: 10';
         corpoDois.innerHTML = 'Número sorteado: ???';
     
     }
@@ -37,7 +38,7 @@ botao2.onclick = function() {
 
     myHeading.innerHTML = 'Números escolhidos:' + numEsc;
 
-    corpoDois.innerHTML = 'Chances restantes: ' + (10 - numEsc.length);
+    corpoTres.innerHTML = 'Chances restantes: ' + (10 - numEsc.length);
 
     if (numEsc.length <= 10) {
 
@@ -66,6 +67,7 @@ botao2.onclick = function() {
         corpoDois.innerHTML = 'Número sorteado: ' + numSorteado;
         numEsc.length = 0;
         myHeading.innerHTML = 'Números escolhidos:';
+        corpoTres.innerHTML = 'Chances restantes: 0';
         alert('Suas chances acabaram!');
         alert('Se quiser jogar novamente faça o sorteio de um novo número!');
         mensagem.innerHTML = ('');
