@@ -9,6 +9,7 @@ function gerarNumero() {
 
 var botao1 = document.getElementById("botao1");
 var myHeading = document.querySelector('h2');
+var corpoDois = document.querySelector('h3');
 var mensagem = document.querySelector('p');
 var botao2 = document.getElementById("botao2");
 
@@ -16,6 +17,8 @@ botao1.onclick = function() {
     if (numEsc.length == 0) {
         let num = gerarNumero();
         numSorteado = num;
+
+        corpoDois.innerHTML = 'Número sorteado: ???';
     
     }
 
