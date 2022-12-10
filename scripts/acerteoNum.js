@@ -21,9 +21,10 @@ botao1.onclick = function() {
 }
 
 botao2.onclick = function() {
-    let numParCom = document.getElementById("numEscolhido").innerHTML
+    let numParCom = document.getElementById("numEscolhido").value
     
-    if (numParCom === numSorteado) {
+
+    if (numParCom == numSorteado) {
         mensagem.innerHTML = ('Parabéns você acertou!');
     } 
 
@@ -32,7 +33,9 @@ botao2.onclick = function() {
     } 
 
     else {
-        mensagem.innerHTML = ('O número sorteado é maior!');
+        mensagem.innerHTML = ('O número sorteado é maior! ' + numParCom);
+
+        //mensagem.innerHTML = ('O número sorteado é maior!');
     }
 
 }
