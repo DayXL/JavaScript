@@ -1,6 +1,8 @@
 var numEsc = [];
 var numSorteado;
 
+var num;
+
 function gerarNumero() {
 
     return Math.floor(Math.random() * (100 - 0 + 1)) + 0;
@@ -11,12 +13,12 @@ var botao1 = document.getElementById("botao1");
 var myHeading = document.querySelector('h2');
 var corpoDois = document.querySelector('h3');
 var corpoTres = document.querySelector('h4');
-var mensagem = document.querySelector('p');
+var mensagem = document.querySelector('h5');
 var botao2 = document.getElementById("botao2");
 
 botao1.onclick = function() {
     if (numEsc.length == 0) {
-        let num = gerarNumero();
+        num = gerarNumero();
         numSorteado = num;
 
         while(numSorteado == undefined) {
@@ -57,10 +59,20 @@ botao2.onclick = function() {
             mensagem.innerHTML = ('');
 
         } 
-
+        
+        else if (numParCom > 100 || numParCom < 0) {
+            corpoDois.innerHTML = 'Número sorteado: ' + numSorteado;
+            numEsc.length = 0;
+            myHeading.innerHTML = 'Números escolhidos:';
+            alert('Digite um numero valido!!');
+            alert('Sortei novamente um numero!');
+            mensagem.innerHTML = ('');
+        }
+        
         else if (numParCom > numSorteado) {
             mensagem.innerHTML = ('O número sorteado é menor!');
         } 
+
 
         else {
 
