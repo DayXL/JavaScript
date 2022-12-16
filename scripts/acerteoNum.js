@@ -1,7 +1,7 @@
 var numEsc = [];
 var numSorteado;
-
 var num;
+var ok;
 
 function gerarNumero() {
 
@@ -23,6 +23,8 @@ botao1.onclick = function() {
 
         corpoTres.innerHTML = 'Chances restantes: 10';
         corpoDois.innerHTML = 'Número sorteado: ???';
+
+        ok = 1;
     
     }
 
@@ -35,56 +37,64 @@ botao1.onclick = function() {
 
 botao2.onclick = function() {
     let numParCom = document.getElementById("numEscolhido").value
-    
-    numEsc.push(numParCom);
+
+    if (ok == 1) {
+        if (numEsc.length <= 10 ) {
 
 
-    if (numEsc.length <= 10) {
+            if (numParCom == numSorteado) {
+                corpoDois.innerHTML = 'Número sorteado: ' + numSorteado;
+                numEsc.length = 0;
+                myHeading.innerHTML = 'Números escolhidos:';
+                alert('Parabéns você acertou!');
+                alert('Se quiser jogar novamente faça o sorteio de um novo número!');
+                mensagem.innerHTML = ('');
+                ok = 0;
 
-        if (numParCom == numSorteado) {
+            } 
+            
+            else if (numParCom > 100 || numParCom < 0) {
+                alert('Digite um numero válido!!');
+
+            }
+            
+            else if (numParCom > numSorteado) {
+
+                numEsc.push(numParCom);
+
+                mensagem.innerHTML = ('O número sorteado é menor!');
+                
+            } 
+
+            else if (numParCom < numSorteado) {
+
+                numEsc.push(numParCom);
+
+                mensagem.innerHTML = ('O número sorteado é maior!');
+            }
+        
+        }
+
+        else {
             corpoDois.innerHTML = 'Número sorteado: ' + numSorteado;
             numEsc.length = 0;
             myHeading.innerHTML = 'Números escolhidos:';
-            alert('Parabéns você acertou!');
+            corpoTres.innerHTML = 'Chances restantes: 0';
+            alert('Suas chances acabaram!');
             alert('Se quiser jogar novamente faça o sorteio de um novo número!');
             mensagem.innerHTML = ('');
-
-        } 
-        
-        else if (numParCom > 100 || numParCom < 0) {
-            alert('Digite um numero válido!!');
+            ok = 0;
 
         }
-        
-        else if (numParCom > numSorteado) {
-            myHeading.innerHTML = 'Números escolhidos:' + numEsc;
 
-            corpoTres.innerHTML = 'Chances restantes: ' + (10 - numEsc.length);
+        myHeading.innerHTML = 'Números escolhidos:' + numEsc;
 
-            mensagem.innerHTML = ('O número sorteado é menor!');
-            
-        } 
+        corpoTres.innerHTML = 'Chances restantes: ' + (10 - numEsc.length);
 
-
-        else {
-            myHeading.innerHTML = 'Números escolhidos:' + numEsc;
-
-            corpoTres.innerHTML = 'Chances restantes: ' + (10 - numEsc.length);
-
-            mensagem.innerHTML = ('O número sorteado é maior!');
-        }
-    
     }
-
     else {
-        corpoDois.innerHTML = 'Número sorteado: ' + numSorteado;
-        numEsc.length = 0;
-        myHeading.innerHTML = 'Números escolhidos:';
-        corpoTres.innerHTML = 'Chances restantes: 0';
-        alert('Suas chances acabaram!');
-        alert('Se quiser jogar novamente faça o sorteio de um novo número!');
-        mensagem.innerHTML = ('');
-
+        alert('Primeiro faça o sorteio!');
+        
     }
 
 }
