@@ -1,7 +1,9 @@
+
 body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
+
 }
 
 header {
@@ -34,3 +36,25 @@ nav ul li a {
 main {
     margin: 20px;
 }
+
+button {
+    background-color: #4682B4; /* cor do fundo */
+    border: none; /* remove a borda */
+    color: white; /* cor do texto */
+    padding: 15px 30px; /* tamanho do padding */
+    text-align: center; /* centraliza o texto */
+    text-decoration: none; /* remove o sublinhado */
+    display: inline-block; /* torna o botão um elemento de bloco */
+    font-size: 16px; /* tamanho da fonte */
+    border-radius: 5px; /* arredonda as bordas */
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3); /* adiciona uma sombra */
+    transition: all 0.3s ease; /* adiciona transição suave */
+}
+  
+button:hover {
+    background-color: #4682B4; /* cor do fundo ao passar o mouse */
+    color: white; /* cor do texto ao passar o mouse */
+    box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.5); /* adiciona uma sombra mais intensa ao passar o mouse */
+    transform: translateY(-2px); /* move o botão para cima ao passar o mouse */
+}
+  
